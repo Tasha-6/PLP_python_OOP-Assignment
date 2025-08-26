@@ -1,0 +1,52 @@
+# Student Class
+class Student:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  # method
+  def display_info(self):
+      print(f"Name: {self.name}, Age: {self.age}")
+
+# create an object
+student1 = Student("Jada", 23)
+student2 = Student("Beth", 21)
+
+# call method
+student1.display_info()
+student2.display_info()
+
+
+print("--- Faculty Members ---")
+
+# Faculty, LabTechnician, Teacher
+class faculty:
+    def work(self):
+        print("Members of Nairobi University's Faculty")
+
+# child class: labtechnician inherits from faculty
+class labTechnician(faculty):
+  def __init__(self, name, subject):
+    self.name = name
+    self.subject = subject
+
+  # method1
+  def display_info(self):
+      print(f"Name: {self.name}, subject: {self.subject}")
+
+# child class: teacher inherits from faculty
+class Teacher(faculty): # Teacher should also inherit from faculty for polymorphism with work()
+  def __init__(self, name, subject):
+    self.name = name
+    self.subject = subject
+
+
+  # method2
+  def display_info(self):
+      print(f"Name: {self.name}, subject: {self.subject}")
+
+
+# Polymorphism
+for staff in [labTechnician("Paul", "Chemistry"), Teacher("Marinella", "Biology")]:
+    staff.work()          # inherited from Faculty
+    staff.display_info()  # unique to each class
