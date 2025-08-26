@@ -1,0 +1,17 @@
+# create animal class
+class Animal:
+  def move(self):
+    print("This animal moves from one place to another in some way")
+class cat(Animal):
+  def move(self):
+    print("This animal runs to move from one point to another")
+class Bird(Animal):
+  def move(self):
+    print("This animal flys to move from one point to another")
+class fish(Animal):
+  def move(self):
+    print("This animal swims to move from one point to another")
+
+# polymorphisim
+for animal in cat(), Bird(), fish():
+  animal.move()
